@@ -1,1 +1,267 @@
+## Python program is designed to calculate a user's Body mass Index (BMI) ##
 
+## User can choose whether or not to proceed with calculating a Waist to Hip Ratio ##
+
+# Greeting the user at the very start of the text-based Python program
+print("Hello. Thank you for your willingness to share your BMI, 'Body mass index', information.")
+print() #displays empty line for easier user readability
+
+# user inputs their name and is stored as a variable
+name = input("Please enter your name. ")
+
+# user input their gender as Male or Female and is stored in a variable
+gender = input("Please enter your gender. For example, male or female. ")
+
+print() # displays empty line for easier user readability
+
+# Providing the user with oversight on what to expect with three information prompts that user needs to input for
+print("To provide an overview for you " + name + ", there will be three information prompts.")
+print() # displays empty line for easier user readability
+print("Each information prompt is a key componenet in determining your BMI score.")
+print() # displays empty line for easier user readability
+print("Two information prompts will be focused on your height.")
+print("For example, 5 feet (first prompt), and 11 inches (second prompt).")
+print() # displays empty line for easier user readability
+print("The third and final information prompt will request information about your weight in lbs.")
+print() # displays empty line for easier user readability
+
+# user inputs their height (in feet) and is stored in a integer variable
+user_height_feet = int(input("1.) Please provide your height in feet as a number. For example, 5 "))
+print() # displays empty line for easier user readability
+
+print() # displays empty line for easier user readability
+
+# user inputs their height (in inches) and is stored in a integer variable
+user_height_inches = int(input("2.) Please provide your height in inches as a number. For example, 4 "))
+print() # displays empty line for easier user readability
+
+# user inputs their weight and is stored in a integer variable 
+user_weight = int(input("3.) Please provide your weight in pounds as a number: For example, 160 "))
+print() # displays empty line for easier user readability
+
+# Variable holds a formula for converting users height in feet to inches
+# inches = ft * 12 inches
+total_height_inches = user_height_feet * 12 
+
+# Storing variable for the users total height inches
+total_height_inches = total_height_inches + user_height_inches
+
+# Body mass index (BMI) formula from cdc.gov website. BMI = weight (lb) / [height (in)]2 x 703
+# BMI variable condenses the BMI formula found on the cdc.gov website
+BMI = user_weight / total_height_inches**2 * 703
+# Side mention: **2 is the Python arithmetic operator for exponentiation
+
+# Rounding BMI variable to one decimal place because the cdc.gov website formats the BMI value to one decimal place.
+BMI = round(BMI, 1)
+
+# BMI ranges are: Underweight, Healthy Weight, Overweight, Above Obesity
+# BMI value was cast as a string value so that it would be displayed to the user.
+# Nested if statements for when the BMI is greater than zero
+if BMI > 0:     # IF conditional statements for when the user's bmi falls into a certain ranges.
+    if(BMI < 18.5):
+        print("Hello " + name + ", your BMI results have been calculated. Your BMI of " + str(BMI) + ", indicates that you're underweight.") 
+        print() # displays empty line for easier user readability
+    elif(BMI <= 24.9):
+        print("Hello " + name + ", your BMI results have been calculated. Your BMI of " + str(BMI) + ", indicates that you're at a healthy weight.")
+        print() # displays empty line for easier user readability
+    elif(BMI <= 29.9):
+        print("Hello " + name + ", your BMI results have been calculated. Your BMI of " + str(BMI) + ", indicates that you're overweight.")
+        print() # displays empty line for easier user readability
+    elif(BMI >= 30.0):
+        print("Hello " + name + ", your BMI results have been calculated. Your BMI of " + str(BMI) + ", indicates that you're at an obesity weight level.")
+        print() # displays empty line for easier user readability
+    else:
+        print("Please enter a positive value.")
+        
+# The folliwng three print functions are empty because it gives the user more readability      
+print() # displays empty line for easier user readability
+print() # displays empty line for easier user readability
+print() # displays empty line for easier user readability
+
+# User is displayed the information about Waist to Hip calculation. More effiecient method than using BMI
+print(name + ", before you go, there is another calculation that you can participate in if you like.")
+print() # displays empty line for easier user readability
+print("This other calculation is known as a Waist to Hip ratio.")
+print() # displays empty line for easier user readability
+print("Studies have shown that it is more accurate than a BMI calculation.")
+print() # displays empty line for easier user readability
+
+# User is presented with a disclaimer that the program will shut down if input is not typed in. While loop condtion.
+print("A little advice, " + name + ", you have 6 attempts to enter a valid choice such as 'yes' or 'no'.")
+print() # displays empty line for easier user readability
+print("If you do not provide a valid choice within 6 attempts, your Waist to Hip ratio calculation will not occur.")
+print() # displays empty line for easier user readability
+
+# User is presented with a choice prompt, (yes or no), to calculate Waist to Hip ratio. 
+ask_user = input("Are you interested in calculating your Waist to Hip ratio today? Please type yes or no: ")
+print() # displays empty line for easier user readability
+
+i = 1 # Counter variable so that the While loops is not an infinite loop.
+# While loop is utilized just in case the user incorrectly inputs other choices besides yes or no values.
+while i < 6:
+    if ask_user == "yes": # user chose to enter yes as a valid option
+        print() # displays empty line for easier user readability
+        break # break statement stops the while loop because the user made a valid choice.
+    elif ask_user == "no": # user chose to enter no as a valid option
+        print() # displays empty line for easier user readability
+        print("Okay. Thank you " + name + " for your time today. Have a wonderful day.")
+        print() # displays empty line for easier user readability
+        break # break statement stop the while loop because the user made a valid choice
+    else:
+        # user did not type in a valid yes or no option
+        ask_user = input("Please enter a valid 'yes' or 'no' choice to proceed with calculating your waist to hip ratio calculation. ")
+        i += 1 # While loop counter increases
+        print() # displays empty line for easier user readability
+        if i == 5: # if While loop counter reaches 5 then a message will appear to the user
+            print(name + ", this is your last chance before the program shuts down.")
+        if i == 6: # if While loop counter reaches 6 then a message will appear to the user
+            print() # displays empty line for easier user readability
+            print(name + " , you have reached your 6th attempt.")
+            print("Unfornuately, you did not provide a valid response such as 'yes' or 'no'")
+            print() # displays empty line for easier user readability
+            print("Please have a good day and feel free to restart again when you're ready.")
+
+                
+# Since user selected yes as a valid option, waist to hip ratio code will be executed from this point onward. 
+if ask_user == "yes":
+##### (Start) All Information from WebMD website was quoted and referenced appropiately in the following print functions
+    print("Special mention: All information from the WebMD website was quoted and referenced appropiately")
+    print() #displays empty line for easier user readability
+    
+    print("Thank you very much " + name + " for choosing to calculate your waist to hip ratio.")
+    
+    print() # displays empty line for easier user readability
+    
+    print("Before calculating the waist to hip ratio, information will be provided to you directly from WedMD's website that centers on this form of measurement.")
+    
+    print() # displays empty line for easier user readability
+    
+    # Background information on Waist to Hip ratio for the user
+    print("The WebMD website states the following about waist to hip ratio:") 
+    print("'Your waist-to-hip ratio compares your waist measurement to your hip measurement.'")
+    print("'Higher ratios can mean you have more fat around your waist. This can lead to a higher risk for heart disease or diabetes.'")
+    
+    print() # displays empty line for easier user readability
+    
+    # Differences between waist to hip ratio vs. BMI measurement
+    print("Waist to hip ratio vs. BMI measurement differences:") 
+    print("'Your waist-to-hip ratio compares your waist size to your hip size.'")
+    print("'By contrast, your body mass index measures your weight against your height.'")
+    
+    print() # displays empty line for easier user readability
+    
+    # Deciding between Waist to hip ratio and BMI measurement
+    print("Which is better for you? Waist to Hip ratio or BMI measurement?") 
+    print("'Your waist-to-hip ratio might give you a better picture of your health than your weight or your BMI.'")
+    print("'You can be at a healthy weight but have too much fat around your midsection.'")
+    print("'A good rule of thumb is that your waist should be smaller than your hips, no matter your weight or BMI.'")
+    
+    print() # displays empty line for easier user readability
+    
+    # Three simple steps to measure waist to hip ratio with tape measure
+    print("Three simple steps to measure your waist to hip ratio:") 
+    print("'Your doctor can measure your waist to hip ratio, or you can find it on your own. Here’s how:'")
+    print("'1.) Start at the top of your hip bone,'")
+    print("'then bring the tape measure all the way around your body, level with your belly button.'")
+    print("'2.) Make sure it's not too tight and that it's straight, even at the back. Don't hold your breath while measuring.'")
+    print("'3.) Check the number on the tape measure right after you exhale.'")
+    
+    print() # displays empty line for easier user readability
+    
+    # Guidelines regarding waist to hip ratio 
+    print("As a guideline, WebMD mentions the following regarding the waist to hip ratio:") 
+    print("'For your best health, your waist should be less than 40 inches around for men, and less than 35 inches for women'")
+    print("'although it may vary depending on race or ethnicity.'")
+    print("'If it's larger than that, you may want to talk with your doctor about what your next steps are, including losing weight.'")
+    
+    print() # displays empty line for easier user readability
+    
+    # Gathering user input for their waist to hip ratio
+    print(name + ", before the waist to hip ratios for men and women are revealed to you, let's first calculate yours.")
+    
+    print() # displays empty line for easier user readability
+    
+    print("Follow the three simple steps for measuring your waist to hip ratio.")
+    print() # displays empty line for easier user readability
+    print("After you have completed the three simple steps, please follow the two information prompts displayed for you.")
+    print("The first information prompt will ask you to provide your recorded waist size.")
+    print("The second information prompt will ask you to provide your recorded hip size.")
+    
+    print() # displays empty line for easier user readability
+   
+    user_waist_size = int(input("1.) Please provide your waist size (in inches) as a number. For example, 30 "))
+    print() # displays empty line for easier user readability
+    user_hip_size = int(input("2.) Please provide your hip size (in inches) as a number. For example, 34 "))
+    print() # displays empty line for easier user readability
+    
+    # Varialble for storing the Waist to hip ratio formula
+    waist_to_hip_ratio = user_waist_size / user_hip_size
+    
+    # Rounding the Waist to hip ratio variable to two decimal places
+    waist_to_hip_ratio = round(waist_to_hip_ratio, 2)
+    
+    ######## Waist to hip ratios differ for men and women so if statements will be used for each gender
+    # Nested if statements for when the gender is male
+    if gender == "male":
+        # Health risk ranges for men with waist to hip ratios are of the following: low, moderate, and high
+        # Waist to hip ratio variable was cast as a string value so that it would be displayed to the user.
+        if waist_to_hip_ratio > 0:     # IF conditional statements for when the user indicates their gender as male
+            if(waist_to_hip_ratio <= 0.95):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a low risk.")
+                print() # displays empty line for easier user readability
+            elif(waist_to_hip_ratio <= 1.0):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a moderate risk.")
+                print() # displays empty line for easier user readability
+            elif(waist_to_hip_ratio >= 1.0):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a high risk.")
+                print() # displays empty line for easier user readability
+            else:
+                print("Please enter a positive value.")
+                
+    # Waist to hip ratios differ for men and women so if statements will be used for each gender
+    # Nested if statements for when the gender is female
+    if gender == "female":
+        # Health risk ranges for women with waist to hip ratios are of the following: low, moderate, and high
+        # Waist to hip ratio variable was cast as a string value so that it would be displayed to the user.
+        if waist_to_hip_ratio > 0:     # IF conditional statements for when the user indicates their gender as female
+            if(waist_to_hip_ratio <= 0.80):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a low risk.")
+                print() # displays empty line for easier user readability
+            elif(waist_to_hip_ratio <= 0.85):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a moderate risk.")
+                print() # displays empty line for easier user readability
+            elif(waist_to_hip_ratio >= 0.86):
+                print("Hello " + name + ", your waist to hip ratio results have been calculated based on " + gender + " gender data.")
+                print() # displays empty line for easier user readability
+                print("Your waist to hip ratio of " + str(waist_to_hip_ratio) + ", indicates that you're at a high risk.")
+                print() # displays empty line for easier user readability
+            else:
+                print("Please enter a positive value.")
+    
+    # Waist to hip ratio that have differing ranges for men and women
+    print(name + ", even though you indicated that your gender is " + gender + ", sharing the following information with friends and family will promote awareness for quality of life.")
+    print() # displays empty line for easier user readability
+    print("Waist to hip ratio. Ranges for men and women:")
+    print("'WHO defines abdominal obesity in men as a waist-to-hip ratio of at least 0.90.'")
+    print("'For women, it’s a ratio of 0.85 or more.'")
+    print("'A ratio higher than 1.0 for either sex means a much higher chance of health problems.'")
+    print() # displays empty line for easier user readability
+    ##### (End) All Information from WebMD website was quoted and referenced appropiately in the following print functions
+    
+    # Acknowleding the user for their time and patience with running this python program.
+    # This print statement also concludes the python program.
+    print() # displays empty line for easier user readability
+    print() # displays empty line for easier user readability
+    print("Thank you very much " + name + " for your time and patience today. Have a wonderful day!")
+
+ 
