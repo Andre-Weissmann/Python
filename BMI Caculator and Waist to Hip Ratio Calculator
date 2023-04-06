@@ -124,8 +124,8 @@ while i < 6:
                 
 # Since user selected yes as a valid option, waist to hip ratio code will be executed from this point onward. 
 if ask_user == "yes":
-##### (Start) All Information from WebMD website was quoted and referenced appropiately in the following print functions
-    print("Special mention: All information from the WebMD website was quoted and referenced appropiately")
+##### (Start) All Information from WebMD website was quoted and referenced appropriately in the following print functions
+    print("Special mention: All information from the WebMD website was quoted and referenced appropriately")
     print() #displays empty line for easier user readability
     
     print("Thank you very much " + name + " for choosing to calculate your waist to hip ratio.")
@@ -256,7 +256,7 @@ if ask_user == "yes":
     print("'For women, it’s a ratio of 0.85 or more.'")
     print("'A ratio higher than 1.0 for either sex means a much higher chance of health problems.'")
     print() # displays empty line for easier user readability
-    ##### (End) All Information from WebMD website was quoted and referenced appropiately in the following print functions
+    ##### (End) All Information from WebMD website was quoted and referenced appropriately in the following print functions
     
     # Acknowleding the user for their time and patience with running this python program.
     # This print statement also concludes the python program.
