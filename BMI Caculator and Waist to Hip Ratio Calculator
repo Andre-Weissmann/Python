@@ -17,7 +17,7 @@ print() # displays empty line for easier user readability
 # Providing the user with oversight on what to expect with three information prompts that user needs to input for
 print("To provide an overview for you " + name + ", there will be three information prompts.")
 print() # displays empty line for easier user readability
-print("Each information prompt is a key componenet in determining your BMI score.")
+print("Each information prompt is a key component in determining your BMI score.")
 print() # displays empty line for easier user readability
 print("Two information prompts will be focused on your height.")
 print("For example, 5 feet (first prompt), and 11 inches (second prompt).")
@@ -264,4 +264,5 @@ if ask_user == "yes":
     print() # displays empty line for easier user readability
     print("Thank you very much " + name + " for your time and patience today. Have a wonderful day!")
 
- 
+    
+    
