@@ -86,7 +86,7 @@ print() # displays empty line for easier user readability
 print("Studies have shown that it is more accurate than a BMI calculation.")
 print() # displays empty line for easier user readability
 
-# User is presented with a disclaimer that the program will shut down if input is not typed in. While loop condtion.
+# User is presented with a disclaimer that the program will shut down if input is not typed in. While loop condition.
 print("A little advice, " + name + ", you have 6 attempts to enter a valid choice such as 'yes' or 'no'.")
 print() # displays empty line for easier user readability
 print("If you do not provide a valid choice within 6 attempts, your Waist to Hip ratio calculation will not occur.")
@@ -263,6 +263,5 @@ if ask_user == "yes":
     print() # displays empty line for easier user readability
     print() # displays empty line for easier user readability
     print("Thank you very much " + name + " for your time and patience today. Have a wonderful day!")
-
     
     
