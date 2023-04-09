@@ -7,7 +7,7 @@ path = r"C:/Users/nfsfa/OneDrive/Documents/Data Analyst portifolio files/Python 
 
 file_name = os.listdir(path) # Creating a list of all files in the directory
 
-folder_names = ['image files', 'Excel files', 'Word files'] # Creating a list of folder names
+folder_names = ['Image files', 'Excel files', 'Word files'] # Creating a list of folder names
 
 for loop in range(0,3): # Looping through each folder name
     if not os.path.exists(path + folder_names[loop]): # Checking if folder exists
