@@ -1,0 +1,37 @@
+from PIL import Image # Importing the Image module from the PIL library
+import os # Importing the os module
+import shutil # Importing the shutil module
+
+# Setting the path variable to the directory where files are stored
+path = r"C:/Users/nfsfa/OneDrive/Documents/Data Analyst portifolio files/Python data projects/Sorting Project/" 
+
+file_name = os.listdir(path) # Creating a list of all files in the directory
+
+folder_names = ['image files', 'Excel files', 'Word files'] # Creating a list of folder names
+
+for loop in range(0,3): # Looping through each folder name
+    if not os.path.exists(path + folder_names[loop]): # Checking if folder exists
+        print(path + folder_names[loop]) # Printing folder path
+        os.makedirs((path + folder_names[loop])) # Creating folder if it doesn't exist
+    
+for file in file_name: # Looping through each file in the directory
+    if ".xlsx" in file and not os.path.exists(path + "Excel files/" + file):  # Checking if file is an Excel file and doesn't exist in Excel folder
+        shutil.move(path + file, path + "Excel files/" + file) # Moving Excel file to Excel folder
+    elif ".jpg" in file and not os.path.exists(path + "Images files/" + file):  # Checking if file is an image and doesn't exist in Image folder
+        shutil.move(path + file, path + "Image files/" + file) # Moving image to Image folder
+    elif ".docx" in file and not os.path.exists(path + "Word files/" + file):  # Checking if file is a Word document and doesn't exist in Word folder
+        shutil.move(path + file, path + "Word files/" + file) # Moving Word document to Word folder   
+
+# Asking user if they want to open a particular folder with and storing answer in variable called option
+option = input("All files have been moved. Would you like to open a particular folder? Please type: yes or no ") 
+
+if option == "yes": # If user wants to open a particular folder
+    which_folder = input("Which folder would you like to open? Excel files? Image files? Word files?") # Asking user which folder they want to open
+    if which_folder == "Excel files": 
+        os.startfile(r"C:\Users\nfsfa\OneDrive\Documents\Data Analyst portifolio files\Python data projects\Sorting Project\Excel files ") # Opening Excel folder
+    elif which_folder == "Image files":
+        os.startfile(r"C:\Users\nfsfa\OneDrive\Documents\Data Analyst portifolio files\Python data projects\Sorting Project\Image files ") # Opening Image folder
+    elif which_folder == "Word files":
+        os.startfile(r"C:\Users\nfsfa\OneDrive\Documents\Data Analyst portifolio files\Python data projects\Sorting Project\Word files ") # Opening Word folder      
+elif option == "no": # If user doesn't want to open any folders
+    print("Okay. You do not want to open any folders at this time.") 
