@@ -7,7 +7,6 @@ Focus areas: exploratory data analysis, data cleaning automation, BMI and biomet
 ## What's here
 
 - **BMI Calculator** — patient biometric analysis tool. Goes beyond a basic calculator: preset patient profiles, metric/imperial toggle, BMI category classification, and a clean output view built for readability.
-- Exploratory data analysis on real-world datasets
 - Automation scripts for operations and data prep workflows
 
 ## Tools
